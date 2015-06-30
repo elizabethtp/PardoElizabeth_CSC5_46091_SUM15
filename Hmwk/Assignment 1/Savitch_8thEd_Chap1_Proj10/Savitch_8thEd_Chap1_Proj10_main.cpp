@@ -19,42 +19,24 @@ using namespace std;
 //Execution--Deploy!
 int main(int argc, char** argv) {
     
-    int numline;
-  cin >> numline;
-  int j;
-  int i;
-  int col;
-  col = 1;
-  int col2;
-  numline = numline - 2;
-   
-  for (i = 0; i < numline; i++) {
-     
-      for (j = 0; j < col; j++) {
-        cout << "+";  
-      }    
-     
-    cout << endl;  
-    col = col + 2;
-}
- 
-  col2 = numline;
- 
-  int k;
-  int m;
-  
- 
-   
-   
-  for (k = 0; k < numline; k++) {
-     
-      for (m = 0; m < col2; m++) {
-        cout << "+";  
-      }    
-     
-    cout << endl;  
-    col2 = col2 - 2;
-}
+    char anyKey;
+    
+    cout << "Press RETURN after entering a key " << endl;
+    
+    cout << "Input any key:" << endl;
+    
+    cin >> anyKey;
+    
+    cout << "Your key will create the letter E." << endl;
+    
+    cout << anyKey << anyKey << anyKey << endl;
+    cout << anyKey << endl;
+    cout << anyKey << endl;
+    cout << anyKey << anyKey << anyKey << endl;
+    cout << anyKey << endl;
+    cout << anyKey << endl;
+    cout << anyKey << anyKey << anyKey << endl;
+    
     //Exit pursued by lions, tigers AND bears--oh my!
     return 0;
 }
