@@ -6,51 +6,42 @@
  */
 
 //System Libraries
-#include <iostream> //I/O Library
-#include <iomanip> //Secondary I/O Library
+#include <iostream>//I/O
+#include <iomanip> //Formatting
 using namespace std;
-
-//User Libraries 
-
+ 
+//User Libraries
+ 
 //Global Constants
-const unsigned char CNVPT=100; //Conversion to Percentage
-
-//Function Prototype
-
+const char CNVPCT=100;//Conversion to a percentage
+ 
+//Function Prototypes
+ 
 //Execution--Deploy!
-int main(int argc, char** argv) {
-    
-    //Declarin' my Variables
-    float USPop;    //US Population
-    float USVC;      //US Violent Crime
-    float UKPop;    //UK Population, not to be confused with the UK Top of the Pops
-    float UKVC;     //UK Violent Crime
-    float USPctg;   //US Percentage
-    float UKPctg;   //UK Percentage
-    
-    //Initialize values from reference website
-    //http://www.nationmaster.com/country-info
-    //  /stats/Crime/Total-crimes#date
-    USPop = 3.18e+6; //318 Million
-    USVC = 1.188e+7; //11.88 Million
-    UKPop = 6.4e+6; //64 Million
-    UKVC = 6.52e+7; //6.52 Million
-    
-    //Calculate the percentage of both the US and the UK VC's versus their population
-    
-    USPctg = (USPop/USVC)*CNVPT;
-    UKPctg = (UKPop/UKVC)*CNVPT;
-    
-    //Output these scary results
-    
-    std::cout << std:: fixed << "Percentage of Violent Crimes in the Unites States = "
-            << std::setprecision(2) << USPctg << " % " << std::endl;
-    //These required using the iomanip stream but it was totally worth it. Because my numbers worked.
-    std::cout << std::fixed << "Percentage of Violent Crimes in the United Kingdom = "
-            << std::setprecision(2)<< UKPctg << " % " << std::endl;
-    
-    //Exit pursued by a bear. Rawr!
-    
-    return 0;
+int main() {
+ 
+	//Declare Variables and Initialize according to the reference
+	float nUSVlnc =  11.88f;//US Violent Crimes in 10^6 million crimes
+	float nUKVlnc =   6.52f;//England Violent Crimes in 10^6 million crimes
+	float USPop   = 318.00f;//US Population in millions
+	float UKPop   =  64.00f;//English Population in millions
+	float pUSVlnc,pUKVlnc;  //Percentage of violence in both cultures
+ 
+    //Calculate the Percentages
+    pUSVlnc=nUSVlnc/USPop*CNVPCT;//Simple Percentage of US Violence
+    pUKVlnc=nUKVlnc/UKPop*CNVPCT;//Simple Percentage of UK Violence
+ 
+    //Output the results
+    cout<<fixed<<showpoint<<setprecision(2);
+    cout<<"The US has "<<nUSVlnc<<" million violent crimes which is ";
+    cout<<pUSVlnc<<" % of the population"<<endl;
+    cout<<"The UK has "<<nUKVlnc<<" million violent crimes which is ";
+    cout<<pUKVlnc<<" % of the population"<<endl;
+    cout<<"Though there are "<<nUSVlnc/nUKVlnc;
+    cout<<" times the violent crimes in America,"<<endl;
+    cout<<"by comparison there is "<<pUKVlnc/pUSVlnc;
+    cout<<" times more violence in the UK given the population"<<endl;
+ 
+    //Exit stage right!
+	return 0;
 }
-
